@@ -4,10 +4,11 @@ from aiogram import Bot, Dispatcher, types
 from aiogram.filters import CommandStart, Command
 from aiogram.methods import DeleteWebhook
 from aiogram.types import Message
+from tokens import API, TOKEN
 import requests
 
 
-TOKEN = '7717055990:AAHdklppsJ1F9R2U0ePPsHiXk6WLyRy-2iE'
+
 
 
 logging.basicConfig(level=logging.INFO)
@@ -29,10 +30,7 @@ async def filter_messages(message: Message):
 
     headers = {
         "Content-Type": "application/json",
-        "Authorization": "Bearer io-v2-eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lciI6IjIzNzg0MWY"
-                     "yLTFlNzgtNGZjNi05MDk3LWYwMzMwY2M4Y2VmZSIsImV4cCI6NDg5"
-                     "NjgzMjQwMn0.FOu9SXtJcSuADCJvzYRaPkIVS4MXvsudqdl5_MqJDDgAmcQCkzZG9"
-                     "3gmVjT8sECJdJK7tdxyj85t-PXsrGWuuA",
+        "Authorization": API,
     }
 
     data = {
@@ -66,3 +64,4 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+
